@@ -1,0 +1,14 @@
+model: carn
+#test_data_dir: dataset/Cityscapes
+multi_scale: False
+scale: 4
+#ckpt_path: ./models/carn_2_150000.pth
+ckpt_path: ./models/carn_traffic_2X_6.pth
+sample_dir: sample
+group: 1
+cuda: True
+shave: 20
+lr: 0.0001
+clip: 10.0
+num_epochs: 5
+num_gpu: 1

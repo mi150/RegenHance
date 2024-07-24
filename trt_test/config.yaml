@@ -1,0 +1,19 @@
+detect_model_path:
+  detect_trt_path: 'yolov5s.engine'
+  detect_onnx_path: '/home/liangm/video_analysis/yolov5-master/yolov5s.onnx'
+  shape: [1920,1088,10924200,1,1]
+mask_model_path:
+  mask_onnx_path: '/home/liangm/video_analysis/trt_test/models/new_output.onnx'
+  mask_trt_path: '/home/liangm/video_analysis/trt_test/models/mask.engine'
+  shape: [360,640,360,640,1]
+sr_model_path:
+  sr_trt_path: 'EDSR_dy.engine'
+  sr_onnx_path: 'EDSR.onnx'
+  shape: [360,640,1080,1920,3]
+
+  
+profiler_yaml_path: profiler_yaml_path.yml
+
+GPU_num_list: [0]
+
+video_reslution: [640,360]
