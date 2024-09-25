@@ -1,4 +1,4 @@
-[🇺🇸](/train.md "English") [🇨🇳](/train-cn.md "Simplified Chinese")
+[🇺🇸](/train/train.md "English") [🇨🇳](/train/train-cn.md "Simplified Chinese")
 
 # 宏块级区域重要性预测器训练
 
