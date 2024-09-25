@@ -1,4 +1,4 @@
-[🇺🇸](/train.md "English") [🇨🇳](/train-cn.md "Simplified Chinese")
+[🇺🇸](/train/train.md "English") [🇨🇳](/train/train-cn.md "Simplified Chinese")
 
 # Train a macroblock-based region importance predictor
 
