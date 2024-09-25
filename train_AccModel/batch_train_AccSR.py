@@ -11,7 +11,7 @@ from itertools import product
 app = "EfficientDet"
 # model_name = f"COCO_full_normalizedsaliency_R_101_FPN_crossthresh_5xdownsample"
 architecture = "SSD"
-model_name = f"importance"
+model_name = f"AccModel"
 # model_name = "visdrone_R_101_FPN_crossthresh"
 filename = "SSD/accmpegmodel"
 
