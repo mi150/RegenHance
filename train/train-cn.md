@@ -60,6 +60,8 @@ YOUR_dataset
 4. compress_blackgen_roi.py：搜索mask_shape可找到需要修改的尺寸，针对你想输出的mask尺寸，修改成对应的大小即可，注意和1中的accmpegmodel.py里的尺寸对应，至于上取整还是下取整都可以，看你的想法。
 ```
 
+可能在后续步骤保存结果时你会遇到找不到路径的错误，可以尝试提前创建两个目录`pickles/`和`maskgen_pths/`，此外在训练时我们需要用到Efficientdet模型，需要从网上下载权重，如果网络不好的话，下载会很慢，可以提前从这个链接中下载[Efficientdet权重](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)，然后保存到`dnn/efficient_det/weights/`这个路径下，我们用的是`efficientdet-d0.pth`，如果你想用别的，记得修改`dnn/efficient_det/interface.py`对应部分的代码。
+
 训练过程包含两个阶段，首先是生成ground truth，在这一阶段中，基于各宏块对超分带来的精度变化的敏感程度不同，各个宏块将被分配到不同的重要性，我们会得到一个ground truth作为后续训练的标签，我们训练AccModel的目标就是输入低分辨率图像后，模型输出的区域重要性分布于ground truth尽可能接近。ground truth会保存在`pickles`目录下。
 
 在计算完敏感程度生成ground truth后程序会由于keyError而中止，不过不要担心，这是正常现象，请重新运行`batch_train_AccModel.py`继续训练，训练完成后，模型将保存在`maskgen_pths`目录中。如果你不想训练AccModel，可直接跳至第4步，因为我们已经得到了ground truth，而训练过程的推广只需要用到这个ground truth即可。
