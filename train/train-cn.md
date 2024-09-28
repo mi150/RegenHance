@@ -66,7 +66,7 @@ YOUR_dataset
 
 在计算完敏感程度生成ground truth后程序会由于keyError而中止，不过不要担心，这是正常现象，请重新运行`batch_train_AccModel.py`继续训练，训练完成后，模型将保存在`maskgen_pths`目录中。如果你不想训练AccModel，可直接跳至第4步，因为我们已经得到了ground truth，而训练过程的推广只需要用到这个ground truth即可。
 
-在完成训练后，我们希望使用AccModel去对预测其他视频帧，生成对应的区域重要性分布。这里我们暂时先沿用上面的`input.mp4`以便快速理解整个流程。首先还是先修改compress_blackgen_roi.py中的数据路径。然后为了避免因尺寸不一致导致的问题，可以再确认一下前面改的尺寸是否正确。最后运行`batch_blackgen_roi.py`可使用训练好的AccModel预测生成区域重要性掩码，结果将会保存至`importance.pth`中。
+在完成训练后，我们希望使用AccModel去对预测其他视频帧，生成对应的区域重要性分布。这里我们暂时先沿用上面的`input.mp4`以便快速理解整个流程。首先还是先修改`compress_blackgen_roi.py`中的数据路径。然后为了避免因尺寸不一致导致的问题，可以再确认一下前面改的尺寸是否正确。最后运行`batch_blackgen_roi.py`可使用训练好的AccModel预测生成区域重要性掩码，结果将会保存至`importance.pth`中。
 
 ```python
 python batch_train_AccModel.py  ##训练预测器
